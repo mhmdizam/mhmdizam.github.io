@@ -181,12 +181,162 @@
   .footer-left{ font-family:'Space Grotesk'; font-size:20px; font-weight:600; }
   .footer-links{ display:flex; gap:26px; font-size:13.5px; color:var(--text-dim); }
 
-  @media (max-width: 900px){
-    .field-grid{ grid-template-columns: repeat(2,1fr); }
-    .board{ grid-template-columns: 1fr; }
-    .flow-strip{ flex-direction:column; }
-    .flow-step{ border-right:none; border-bottom:1px solid var(--line); }
+  /* ---- BASE RESPONSIVE ADJUSTMENTS ---- */
+
+/* Prevent horizontally overflowing content on narrow screens */
+body {
+  overflow-x: hidden;
+}
+
+/* Make image assets responsive by default */
+img, svg {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Adjust wrapper padding for small devices */
+.wrap {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ---- TABLET BREAKPOINT (max-width: 900px) ---- */
+@media (max-width: 900px) {
+  nav {
+    padding: 20px;
+    flex-wrap: wrap;
+    gap: 16px;
   }
+  
+  .hero {
+    padding: 40px 0px 20px;
+  }
+  
+  .ticket {
+    padding: 28px 24px;
+  }
+
+  .field-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px 16px;
+  }
+
+  .board-section, .flow-section {
+    padding: 60px 0px 20px;
+  }
+
+  .board {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .flow-strip {
+    flex-direction: column;
+  }
+
+  .flow-step {
+    border-right: none;
+    border-bottom: 1px solid var(--line);
+  }
+  
+  .flow-step:last-child {
+    border-bottom: none;
+  }
+
+  footer {
+    padding: 40px 0px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* ---- MOBILE BREAKPOINT (max-width: 600px) ---- */
+@media (max-width: 600px) {
+  /* Navigation Adjustment */
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 16px 20px;
+  }
+
+  .nav-links {
+    width: 100%;
+    justify-content: flex-start;
+    gap: 18px;
+    font-size: 13px;
+  }
+
+  .status-pill {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Hero & Ticket Section */
+  .ticket-top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .ticket-tags {
+    flex-wrap: wrap;
+  }
+
+  h1.name {
+    font-size: 32px;
+  }
+
+  .role-line {
+    font-size: 15px;
+  }
+
+  .summary {
+    font-size: 14px;
+  }
+
+  /* Metrics Grid Stacks to Single Column */
+  .field-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .field .value {
+    font-size: 22px;
+  }
+
+  /* CTA Buttons Stack */
+  .cta-row {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Case Studies Grid */
+  .board {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    padding: 18px;
+  }
+
+  /* Footer Links */
+  .footer-left {
+    font-size: 17px;
+    word-break: break-word;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    gap: 12px;
+  }
+}
 </style>
 </head>
 <body>
