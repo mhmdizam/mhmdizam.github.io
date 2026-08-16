@@ -8,346 +8,17 @@
 <meta property="og:title" content="Izam Buhan — Creative Operations & Brand Production Manager">
 <meta property="og:description" content="From making the work to running the studio. Case studies in creative operations, brand production, and AI-assisted design systems.">
 <meta property="og:type" content="website">
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
-
-  :root{
-    --bg: #10142A;
-    --surface: #1A2044;
-    --surface-hi: #232B57;
-    --line: #333B6B;
-    --text: #F3F4EF;
-    --text-dim: #9BA1C7;
-    --accent: #C9EB5E;
-    --accent-dim: #7C8C3F;
-    --tag-blue: #6FA8FF;
-    --tag-coral: #FF8B70;
-  }
-
-  * { box-sizing: border-box; }
-  html,body{ margin:0; padding:0; }
-  body{
-    background: var(--bg);
-    color: var(--text);
-    font-family: 'Inter', sans-serif;
-    -webkit-font-smoothing: antialiased;
-  }
-  .mono{ font-family:'JetBrains Mono', monospace; }
-  .display{ font-family:'Space Grotesk', sans-serif; }
-
-  .wrap{ max-width: 1180px; margin: 0 auto; padding: 0 40px; }
-
-  /* ---- NAV ---- */
-  nav{
-    display:flex; justify-content:space-between; align-items:center;
-    padding: 28px 40px; border-bottom:1px solid var(--line);
-  }
-  .logo{ display:flex; align-items:center; gap:10px; }
-  .logo-mark{
-    width:28px; height:28px; border:1.5px solid var(--accent); border-radius:6px;
-    display:flex; align-items:center; justify-content:center;
-    font-size:12px; color:var(--accent);
-  }
-  .logo-text{ font-family:'Space Grotesk'; font-weight:600; font-size:15px; letter-spacing:0.02em;}
-  .nav-links{ display:flex; gap: 32px; font-size:14px; color:var(--text-dim);}
-  .nav-links span:hover{ color: var(--text); cursor:pointer; }
-  .status-pill{
-    font-family:'JetBrains Mono'; font-size:11px; letter-spacing:0.04em;
-    background: rgba(201,235,94,0.1); color: var(--accent);
-    border:1px solid var(--accent-dim); border-radius: 20px;
-    padding: 6px 12px; display:flex; align-items:center; gap:6px;
-  }
-  .dot{ width:6px; height:6px; border-radius:50%; background:var(--accent); }
-
-  /* ---- HERO CARD (the "ticket") ---- */
-  .hero{ padding: 64px 40px 24px; }
-  .hero-eyebrow{
-    font-family:'JetBrains Mono'; font-size:12px; color:var(--text-dim);
-    letter-spacing:0.06em; margin-bottom: 14px;
-  }
-  .ticket{
-    background: var(--surface);
-    border:1px solid var(--line);
-    border-radius: 14px;
-    padding: 40px;
-    position: relative;
-    overflow:hidden;
-  }
-  .ticket::before{
-    content:"";
-    position:absolute; left:0; top:0; bottom:0; width:4px;
-    background: var(--accent);
-  }
-  .ticket-top{
-    display:flex; justify-content:space-between; align-items:flex-start;
-    margin-bottom: 28px; flex-wrap: wrap; gap: 16px;
-  }
-  .ticket-id{ font-family:'JetBrains Mono'; font-size:13px; color:var(--accent); }
-  .ticket-tags{ display:flex; gap:8px; }
-  .tag{
-    font-family:'JetBrains Mono'; font-size:11px; padding:4px 10px;
-    border-radius: 5px; letter-spacing:0.02em;
-  }
-  .tag.open{ background: rgba(201,235,94,0.12); color: var(--accent); border:1px solid var(--accent-dim);}
-  .tag.role{ background: rgba(111,168,255,0.12); color: var(--tag-blue); border:1px solid rgba(111,168,255,0.4);}
-
-  h1.name{
-    font-family:'Space Grotesk'; font-weight:700;
-    font-size: clamp(36px, 5vw, 56px);
-    line-height: 1.05; margin: 0 0 10px;
-    letter-spacing: -0.01em;
-  }
-  .role-line{
-    font-size: 18px; color: var(--text-dim); margin-bottom: 22px; max-width: 620px;
-  }
-  .summary{
-    font-size:15px; line-height:1.65; color: var(--text-dim);
-    max-width: 640px; margin-bottom: 32px;
-  }
-  .summary b{ color: var(--text); font-weight: 500; }
-
-  .field-grid{
-    display:grid; grid-template-columns: repeat(4, 1fr);
-    border-top:1px solid var(--line); padding-top: 24px; gap: 8px;
-  }
-  .field .label{ font-family:'JetBrains Mono'; font-size:11px; color:var(--text-dim); margin-bottom:6px; letter-spacing:0.04em;}
-  .field .value{ font-family:'Space Grotesk'; font-size:24px; font-weight:600; color:var(--text);}
-  .field .value span{ color: var(--accent); }
-
-  .cta-row{ display:flex; gap:14px; margin-top: 32px; }
-  .btn{
-    font-family:'Inter'; font-size:14px; font-weight:500;
-    padding: 12px 22px; border-radius: 8px; cursor:pointer;
-  }
-  .btn.primary{ background: var(--accent); color:#10142A; border:none; }
-  .btn.ghost{ background:transparent; color:var(--text); border:1px solid var(--line); }
-
-  /* ---- BOARD SECTION ---- */
-  .board-section{ padding: 90px 40px 40px; }
-  .section-head{ display:flex; justify-content:space-between; align-items:baseline; margin-bottom:28px; flex-wrap:wrap; gap:10px;}
-  .section-title{ font-family:'Space Grotesk'; font-size:26px; font-weight:600; }
-  .section-sub{ font-family:'JetBrains Mono'; font-size:12px; color:var(--text-dim); }
-
-  .board{
-    display:grid; grid-template-columns: repeat(3, 1fr); gap: 18px;
-  }
-  .card{
-    background: var(--surface);
-    border:1px solid var(--line);
-    border-radius: 12px;
-    padding: 22px;
-    display:flex; flex-direction:column; gap:14px;
-    transition: border-color 0.15s ease;
-  }
-  .card:hover{ border-color: var(--accent-dim); }
-  .card-top{ display:flex; justify-content:space-between; align-items:center;}
-  .card-tag{
-    font-family:'JetBrains Mono'; font-size:10.5px; padding:3px 9px; border-radius:5px;
-  }
-  .card-tag.shipped{ background: rgba(201,235,94,0.12); color:var(--accent); }
-  .card-tag.scaled{ background: rgba(255,139,112,0.12); color: var(--tag-coral); }
-  .card-tag.live{ background: rgba(111,168,255,0.12); color: var(--tag-blue); }
-  .card-id{ font-family:'JetBrains Mono'; font-size:11px; color:var(--text-dim); }
-
-  .card-title{ font-family:'Space Grotesk'; font-size:19px; font-weight:600; line-height:1.25; }
-  .card-desc{ font-size:13.5px; color:var(--text-dim); line-height:1.55; }
-
-  .card-stat{
-    margin-top:auto; border-top:1px solid var(--line); padding-top:12px;
-    display:flex; justify-content:space-between; align-items:baseline;
-  }
-  .card-stat .num{ font-family:'Space Grotesk'; font-size:20px; font-weight:700; color:var(--accent); }
-  .card-stat .desc{ font-family:'JetBrains Mono'; font-size:10.5px; color:var(--text-dim); text-align:right; max-width:120px; }
-
-  /* ---- WORKFLOW STRIP (systems section) ---- */
-  .flow-section{ padding: 90px 40px; }
-  .flow-strip{
-    display:flex; align-items:stretch; border:1px solid var(--line); border-radius:12px; overflow:hidden;
-  }
-  .flow-step{
-    flex:1; padding: 26px 22px; position:relative;
-    border-right:1px solid var(--line);
-  }
-  .flow-step:last-child{ border-right:none; }
-  .flow-num{ font-family:'JetBrains Mono'; font-size:11px; color: var(--accent); margin-bottom:10px; }
-  .flow-title{ font-family:'Space Grotesk'; font-weight:600; font-size:15.5px; margin-bottom:8px; }
-  .flow-desc{ font-size:12.5px; color:var(--text-dim); line-height:1.5; }
-
-  /* ---- FOOTER ---- */
-  footer{
-    padding: 60px 40px 40px; border-top:1px solid var(--line);
-    display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:20px;
-  }
-  .footer-left{ font-family:'Space Grotesk'; font-size:20px; font-weight:600; }
-  .footer-links{ display:flex; gap:26px; font-size:13.5px; color:var(--text-dim); }
-
-  /* ---- BASE RESPONSIVE ADJUSTMENTS ---- */
-
-/* Prevent horizontally overflowing content on narrow screens */
-body {
-  overflow-x: hidden;
-}
-
-/* Make image assets responsive by default */
-img, svg {
-  max-width: 100%;
-  height: auto;
-}
-
-/* Adjust wrapper padding for small devices */
-.wrap {
-  max-width: 1180px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-/* ---- TABLET BREAKPOINT (max-width: 900px) ---- */
-@media (max-width: 900px) {
-  nav {
-    padding: 20px;
-    flex-wrap: wrap;
-    gap: 16px;
-  }
-  
-  .hero {
-    padding: 40px 0px 20px;
-  }
-  
-  .ticket {
-    padding: 28px 24px;
-  }
-
-  .field-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px 16px;
-  }
-
-  .board-section, .flow-section {
-    padding: 60px 0px 20px;
-  }
-
-  .board {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
-  }
-
-  .flow-strip {
-    flex-direction: column;
-  }
-
-  .flow-step {
-    border-right: none;
-    border-bottom: 1px solid var(--line);
-  }
-  
-  .flow-step:last-child {
-    border-bottom: none;
-  }
-
-  footer {
-    padding: 40px 0px;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-}
-
-/* ---- MOBILE BREAKPOINT (max-width: 600px) ---- */
-@media (max-width: 600px) {
-  /* Navigation Adjustment */
-  nav {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 14px;
-    padding: 16px 20px;
-  }
-
-  .nav-links {
-    width: 100%;
-    justify-content: flex-start;
-    gap: 18px;
-    font-size: 13px;
-  }
-
-  .status-pill {
-    width: 100%;
-    justify-content: center;
-  }
-
-  /* Hero & Ticket Section */
-  .ticket-top {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-  }
-
-  .ticket-tags {
-    flex-wrap: wrap;
-  }
-
-  h1.name {
-    font-size: 32px;
-  }
-
-  .role-line {
-    font-size: 15px;
-  }
-
-  .summary {
-    font-size: 14px;
-  }
-
-  /* Metrics Grid Stacks to Single Column */
-  .field-grid {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
-
-  .field .value {
-    font-size: 22px;
-  }
-
-  /* CTA Buttons Stack */
-  .cta-row {
-    flex-direction: column;
-    width: 100%;
-  }
-
-  .btn {
-    width: 100%;
-    text-align: center;
-  }
-
-  /* Case Studies Grid */
-  .board {
-    grid-template-columns: 1fr;
-  }
-
-  .card {
-    padding: 18px;
-  }
-
-  /* Footer Links */
-  .footer-left {
-    font-size: 17px;
-    word-break: break-word;
-  }
-
-  .footer-links {
-    flex-direction: column;
-    gap: 12px;
-  }
-}
-</style>
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
   <nav>
-    <div class="logo">
+    <a class="logo" href="index.html">
       <div class="logo-mark">IB</div>
       <div class="logo-text">IZAM BUHAN</div>
-    </div>
+    </a>
     <div class="nav-links">
-      <span>Work</span><span>Systems</span><span>About</span><span>Resume</span>
+      <a href="#work">Work</a><a href="#systems">Systems</a><a href="mailto:izam.buhan@gmail.com">Contact</a><a href="Izam_Buhan_Resume_ATS.docx">Resume</a>
     </div>
     <div class="status-pill"><span class="dot"></span>OPEN TO CREATIVE OPS / PMO ROLES</div>
   </nav>
@@ -380,75 +51,87 @@ img, svg {
       </div>
 
       <div class="cta-row">
-        <button class="btn primary">View case studies ↓</button>
-        <button class="btn ghost">Download resume</button>
+        <a href="#work" class="btn primary">View case studies ↓</a>
+        <a href="Izam_Buhan_Resume_ATS.docx" class="btn ghost">Download resume</a>
       </div>
     </div>
   </header>
 
-  <section class="board-section wrap">
+  <section class="board-section wrap" id="work">
     <div class="section-head">
       <div class="section-title">Selected work</div>
       <div class="section-sub mono">4 CASE STUDIES · SORTED BY IMPACT</div>
     </div>
     <div class="board">
 
-      <div class="card">
-        <div class="card-top">
-          <div class="card-tag scaled">SCALED</div>
-          <div class="card-id">QS-2025</div>
+      <a class="card-link" href="case-qs-summit.html">
+        <div class="card">
+          <div class="card-top">
+            <div class="card-tag scaled">SCALED</div>
+            <div class="card-id">QS-2025</div>
+          </div>
+          <div class="card-title">QS APAC Summit</div>
+          <div class="card-desc">Creative strategy &amp; production for the flagship annual summit — sponsorship, delegate experience, and on-site brand systems.</div>
+          <div class="card-stat">
+            <div class="num">£2M+</div>
+            <div class="desc">revenue, up from £429K in 2019</div>
+          </div>
+          <div class="card-cta">View case study →</div>
         </div>
-        <div class="card-title">QS APAC Summit</div>
-        <div class="card-desc">Creative strategy &amp; production for the flagship annual summit — sponsorship, delegate experience, and on-site brand systems.</div>
-        <div class="card-stat">
-          <div class="num">£2M+</div>
-          <div class="desc">revenue, up from £429K in 2019</div>
-        </div>
-      </div>
+      </a>
 
-      <div class="card">
-        <div class="card-top">
-          <div class="card-tag live">LIVE</div>
-          <div class="card-id">QS-RBR</div>
+      <a class="card-link" href="case-global-rebrand.html">
+        <div class="card">
+          <div class="card-top">
+            <div class="card-tag live">LIVE</div>
+            <div class="card-id">QS-RBR</div>
+          </div>
+          <div class="card-title">Global Rebrand</div>
+          <div class="card-desc">End-to-end brand system rollout across every regional touchpoint and digital channel.</div>
+          <div class="card-stat">
+            <div class="num">+40%</div>
+            <div class="desc">engagement across digital</div>
+          </div>
+          <div class="card-cta">View case study →</div>
         </div>
-        <div class="card-title">Global Rebrand</div>
-        <div class="card-desc">End-to-end brand system rollout across every regional touchpoint and digital channel.</div>
-        <div class="card-stat">
-          <div class="num">+40%</div>
-          <div class="desc">engagement across digital</div>
-        </div>
-      </div>
+      </a>
 
-      <div class="card">
-        <div class="card-top">
-          <div class="card-tag shipped">SHIPPED</div>
-          <div class="card-id">ZLR-14</div>
+      <a class="card-link" href="case-zalora-launch.html">
+        <div class="card">
+          <div class="card-top">
+            <div class="card-tag shipped">SHIPPED</div>
+            <div class="card-id">ZLR-14</div>
+          </div>
+          <div class="card-title">ZALORA Launch</div>
+          <div class="card-desc">Built the creative function from zero during ZALORA's high-growth SEA launch phase.</div>
+          <div class="card-stat">
+            <div class="num">+35%</div>
+            <div class="desc">production efficiency</div>
+          </div>
+          <div class="card-cta">View case study →</div>
         </div>
-        <div class="card-title">ZALORA Launch</div>
-        <div class="card-desc">Built the creative function from zero during ZALORA's high-growth SEA launch phase.</div>
-        <div class="card-stat">
-          <div class="num">+35%</div>
-          <div class="desc">production efficiency</div>
-        </div>
-      </div>
+      </a>
 
-      <div class="card">
-        <div class="card-top">
-          <div class="card-tag shipped">SHIPPED</div>
-          <div class="card-id">QS-AUT</div>
+      <a class="card-link" href="case-ai-system.html">
+        <div class="card">
+          <div class="card-top">
+            <div class="card-tag shipped">SHIPPED</div>
+            <div class="card-id">QS-AUT</div>
+          </div>
+          <div class="card-title">AI Production System</div>
+          <div class="card-desc">Template automation &amp; atomic design system reducing repetitive production work studio-wide.</div>
+          <div class="card-stat">
+            <div class="num">−30%</div>
+            <div class="desc">production timelines</div>
+          </div>
+          <div class="card-cta">View case study →</div>
         </div>
-        <div class="card-title">AI Production System</div>
-        <div class="card-desc">Template automation &amp; atomic design system reducing repetitive production work studio-wide.</div>
-        <div class="card-stat">
-          <div class="num">−30%</div>
-          <div class="desc">production timelines</div>
-        </div>
-      </div>
+      </a>
 
     </div>
   </section>
 
-  <section class="flow-section wrap">
+  <section class="flow-section wrap" id="systems">
     <div class="section-head">
       <div class="section-title">How the studio runs</div>
       <div class="section-sub mono">BRIEF → SYSTEM → LAUNCH → SCALE</div>
@@ -480,7 +163,9 @@ img, svg {
   <footer class="wrap">
     <div class="footer-left">Let's talk — <span style="color:var(--accent)">izam.buhan@gmail.com</span></div>
     <div class="footer-links">
-      <span>LinkedIn</span><span>Behance (archive)</span><span>Resume</span>
+      <a href="https://linkedin.com/in/mhmdizam" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://www.behance.net/mhmdizambuhan" target="_blank" rel="noopener">Behance (archive)</a>
+      <a href="Izam_Buhan_Resume_ATS.docx">Resume</a>
     </div>
   </footer>
 
