@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="icon" href="favicon.ico">
+  <link rel="stylesheet" href="styles.css">
+  <title>Izam Buhan — LinkedIn Carousel</title>
+  <style>
+    /* ===== RESET & ROOT ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg: #10142A;
+      --surface: #1A2044;
+      --surface-hi: #232B57;
+      --line: #333B6B;
+      --text: #F3F4EF;
+      --text-dim: #9BA1C7;
+      --accent: #C9EB5E;
+      --accent-dim: #7C8C3F;
+      --tag-blue: #6FA8FF;
+      --tag-coral: #FF8B70;
+      --font-sans: 'Liberation Sans', 'DejaVu Sans', system-ui, -apple-system, sans-serif;
+      --font-mono: 'Liberation Mono', 'DejaVu Sans Mono', 'Courier New', monospace;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: #000;
+      font-family: var(--font-sans);
+      -webkit-font-smoothing: antialiased;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* ===== SLIDE WRAPPER ===== */
+    .slide {
+      width: 100%;
+      max-width: 1080px;
+      aspect-ratio: 1080 / 1350;
+      background: var(--bg);
+      color: var(--text);
+      position: relative;
+      overflow: hidden;
+      padding: clamp(24px, 6vw, 90px) clamp(20px, 5vw, 80px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin: 0 auto;
+      border-bottom: 2px solid var(--line);
+    }
+
+    /* ===== TYPOGRAPHY ===== */
+    .eyebrow {
+      font-family: var(--font-mono);
+      font-size: clamp(12px, 1.4vw, 16px);
+      color: var(--accent);
+      letter-spacing: 0.08em;
+      margin-bottom: clamp(12px, 2vw, 22px);
+      text-transform: uppercase;
+    }
+
+    .pagenum {
+      position: absolute;
+      bottom: clamp(20px, 4vw, 70px);
+      right: clamp(20px, 5vw, 80px);
+      font-family: var(--font-mono);
+      font-size: clamp(11px, 1.3vw, 15px);
+      color: var(--text-dim);
+    }
+
+    .accentbar {
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: clamp(4px, 0.7vw, 8px);
+      background: var(--accent);
+    }
+
+    /* ===== TAGS ===== */
+    .tag {
+      font-family: var(--font-mono);
+      font-size: clamp(11px, 1.3vw, 16px);
+      padding: clamp(4px, 0.5vw, 7px) clamp(10px, 1.4vw, 16px);
+      border-radius: 7px;
+      letter-spacing: 0.02em;
+      display: inline-block;
+      white-space: nowrap;
+    }
+    .tag.open { background: rgba(201,235,94,0.12); color: var(--accent); border: 1px solid var(--accent-dim); }
+    .tag.role { background: rgba(111,168,255,0.12); color: var(--tag-blue); border: 1px solid rgba(111,168,255,0.4); }
+    .tag.shipped { background: rgba(201,235,94,0.12); color: var(--accent); border: 1px solid var(--accent-dim); }
+    .tag.scaled { background: rgba(255,139,112,0.12); color: var(--tag-coral); border: 1px solid rgba(255,139,112,0.4); }
+    .tag.live { background: rgba(111,168,255,0.12); color: var(--tag-blue); border: 1px solid rgba(111,168,255,0.4); }
+    .tag.mono { background: transparent; border: 1px solid var(--line); color: var(--text-dim); }
+
+    /* ===== HEADINGS ===== */
+    h1.big {
+      font-family: var(--font-sans);
+      font-weight: 700;
+      font-size: clamp(32px, 7vw, 76px);
+      line-height: 1.04;
+      margin: 0 0 clamp(16px, 2vw, 24px);
+      letter-spacing: -0.01em;
+    }
+
+    h2.mid {
+      font-family: var(--font-sans);
+      font-weight: 700;
+      font-size: clamp(24px, 4.8vw, 52px);
+      line-height: 1.1;
+      margin: 0 0 clamp(12px, 1.8vw, 20px);
+    }
+
+    p.body {
+      font-size: clamp(16px, 2.4vw, 26px);
+      line-height: 1.55;
+      color: var(--text-dim);
+      margin: 0 0 clamp(12px, 1.6vw, 20px);
+    }
+    p.body b {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .statline {
+      font-family: var(--font-sans);
+      font-weight: 700;
+      font-size: clamp(48px, 11vw, 120px);
+      color: var(--accent);
+      line-height: 1;
+      margin: clamp(8px, 1.2vw, 14px) 0;
+    }
+
+    .statlabel {
+      font-family: var(--font-mono);
+      font-size: clamp(12px, 1.6vw, 18px);
+      color: var(--text-dim);
+      letter-spacing: 0.04em;
+    }
+
+    /* ===== DIVIDER ===== */
+    .divider {
+      height: 1px;
+      background: var(--line);
+      margin: clamp(16px, 2.4vw, 28px) 0;
+    }
+
+    /* ===== GRID ===== */
+    .field-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: clamp(14px, 2.4vw, 28px);
+      margin-top: auto;
+    }
+    .field .label {
+      font-family: var(--font-mono);
+      font-size: clamp(11px, 1.2vw, 15px);
+      color: var(--text-dim);
+      margin-bottom: 4px;
+    }
+    .field .value {
+      font-family: var(--font-sans);
+      font-size: clamp(24px, 4vw, 44px);
+      font-weight: 700;
+    }
+    .field .value span {
+      color: var(--accent);
+    }
+
+    /* ===== FLOW LIST ===== */
+    .flow-list .flow-item {
+      display: flex;
+      gap: clamp(12px, 1.8vw, 24px);
+      align-items: flex-start;
+      margin-bottom: clamp(18px, 2.8vw, 34px);
+    }
+    .flow-list .flow-num {
+      font-family: var(--font-mono);
+      font-size: clamp(16px, 2vw, 22px);
+      color: var(--accent);
+      width: clamp(32px, 4vw, 50px);
+      flex-shrink: 0;
+    }
+    .flow-list .flow-title {
+      font-family: var(--font-sans);
+      font-weight: 700;
+      font-size: clamp(18px, 2.6vw, 30px);
+      margin-bottom: 2px;
+    }
+    .flow-list .flow-desc {
+      font-size: clamp(14px, 1.8vw, 20px);
+      color: var(--text-dim);
+      line-height: 1.5;
+    }
+
+    /* ===== COVER TICKET ===== */
+    .cover-ticket {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: clamp(20px, 3vw, 40px);
+      margin-top: clamp(12px, 1.8vw, 20px);
+      position: relative;
+      overflow: hidden;
+    }
+    .cover-ticket::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: clamp(3px, 0.5vw, 5px);
+      background: var(--accent);
+    }
+
+    /* ===== LOGO ROW ===== */
+    .logo-row {
+      display: flex;
+      align-items: center;
+      gap: clamp(8px, 1vw, 12px);
+      margin-bottom: clamp(24px, 4vw, 50px);
+    }
+    .logo-mark {
+      width: clamp(28px, 3.2vw, 36px);
+      height: clamp(28px, 3.2vw, 36px);
+      border: 2px solid var(--accent);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-sans);
+      font-weight: 700;
+      font-size: clamp(12px, 1.3vw, 15px);
+      color: var(--accent);
+    }
+    .logo-text {
+      font-family: var(--font-sans);
+      font-weight: 600;
+      font-size: clamp(14px, 1.8vw, 20px);
+      letter-spacing: 0.02em;
+    }
+
+    .arrow-cta {
+      font-family: var(--font-mono);
+      font-size: clamp(14px, 1.8vw, 20px);
+      color: var(--accent);
+      margin-top: auto;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .arrow-cta a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    /* ===== RESPONSIVE FINE-TUNE ===== */
+    @media (max-width: 600px) {
+      .slide {
+        padding: 20px 16px;
+        aspect-ratio: auto;
+        min-height: 100vh;
+        height: auto;
+        justify-content: flex-start;
+        padding-top: 40px;
+        padding-bottom: 60px;
+      }
+      .field-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+      }
+      .flow-list .flow-item {
+        flex-direction: column;
+        gap: 4px;
+        margin-bottom: 20px;
+      }
+      .flow-list .flow-num {
+        width: auto;
+      }
+      .cover-ticket {
+        padding: 16px;
+      }
+      .pagenum {
+        bottom: 16px;
+        right: 16px;
+      }
+      .accentbar {
+        width: 4px;
+      }
+      .tag {
+        font-size: 10px;
+        padding: 3px 8px;
+        white-space: normal;
+      }
+      .logo-row {
+        margin-bottom: 20px;
+      }
+    }
+
+    @media (max-width: 400px) {
+      .field-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+      }
+      .field .value {
+        font-size: 18px;
+      }
+      h1.big {
+        font-size: 26px;
+      }
+      h2.mid {
+        font-size: 20px;
+      }
+      p.body {
+        font-size: 14px;
+      }
+      .statline {
+        font-size: 36px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== SLIDE 1: COVER ===== -->
+<div class="slide">
+  <div class="accentbar"></div>
+  <div class="logo-row"><div class="logo-mark">IB</div><div class="logo-text mono">IZAM-01 · PROFILE</div></div>
+  <div class="eyebrow">// 17 Years in Design. A New Ticket Opens.</div>
+  <h1 class="big">From making<br>the work — to<br>running the<br>studio.</h1>
+  <div class="cover-ticket">
+    <div style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:16px;">
+      <span class="tag open">STATUS: OPEN</span>
+      <span class="tag role">TARGET: PMO / CREATIVE OPS</span>
+    </div>
+    <p class="body" style="margin-bottom:0; font-size:clamp(16px, 2.2vw, 24px);">Muhammad Izam Buhan — Creative Operations &amp; <br>Brand Production Manager, Kuala Lumpur</p>
+  </div>
+  <div class="arrow-cta">SCROLL DOWN FOR THE CASE STUDIES ↓</div>
+  <div class="pagenum">01 / 13</div>
+</div>
+
+<!-- ===== SLIDE 2: THE SHIFT ===== -->
+<div class="slide">
+  <div class="accentbar"></div>
+  <div class="eyebrow">// The Shift</div>
+  <h2 class="mid">Most designers optimise the deliverable.</h2>
+  <p class="body" style="font-size:clamp(18px, 2.8vw, 30px);">After 17 years I got more interested in a harder question:</p>
+  <p class="body" style="font-size:clamp(20px, 3.2vw, 34px); color:var(--text); font-weight:600;">how do you build a studio that ships great work <span style="color:var(--accent)">without burning the team out</span> to do it?</p>
+  <div class="divider"></div>
+  <p class="body" style="font-size:clamp(14px, 2vw, 22px);">That question is what this deck is really about — 4 case studies from running QS's global creative function.</p>
+  <div class="pagenum">02 / 13</div>
+</div>
+
+<!-- ===== SLIDE 3: SNAPSHOT ===== -->
+<div class="slide">
+  <div class="accentbar"></div>
+  <div class="eyebrow">// Snapshot</div>
+  <h2 class="mid">The numbers, up front.</h2>
+  <div class="field-grid" style="margin-top:clamp(20px, 3vw, 40px);">
+    <div class="field"><div class="label">YEARS EXPERIENCE</div><div class="value"><span>17</span>+</div></div>
+    <div class="field"><div class="label">SUMMIT REVENUE SCALED</div><div class="value">→<span>£2M+</span></div></div>
+    <div class="field"><div class="label">TEAM PERFORMANCE</div><div class="value">+<span>25</span>%</div></div>
+    <div class="field"><div class="label">CORE STAFF RETENTION</div><div class="value"><span>100</span>%</div></div>
+    <div class="field"><div class="label">PRODUCTION TIME CUT</div><div class="value">−<span>30</span>%</div></div>
+    <div class="field"><div class="label">REGIONS MANAGED</div><div class="value"><span>3</span> continents</div></div>
+  </div>
+  <div class="pagenum">03 / 13</div>
+</div>
+
+<!-- ===== SLIDE 4: CASE STUDY 1 - CONTEXT ===== -->
+<div class="slide">
+  <div class="accentbar"></div>
+  <div style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:18px;"><span class="tag scaled">CASE STUDY 01</span><span class="tag mono">QS-2025</span></div>
+  <h2 class="mid" style="font-size:clamp(28px, 5.4vw, 58px);">QS APAC Summit</h2>
+  <p class="body" style="font-size:clamp(18px, 2.6vw, 28px);">The flagship annual summit — QS's largest single brand and revenue event, run across a distributed creative team.</p>
+  <div class="divider"></div>
+  <p class="body"><b>The brief:</b> deliver creative strategy, sponsorship assets and on-site brand systems for 13+ annual global summits — without the budget or headcount growing at the same rate as the events did.</p>
+  <div class="pagenum">04 / 13</div>
+</div>
+
+<!-- ===== SLIDE 5: CASE STUDY 1 - APPROACH ===== -->
+<div class="slide">
+  <div class="accentbar"></div>
+  <div class="eyebrow">// QS APAC Summit — Approach</div>
+  <h2 class="mid" style="font-size:clamp(24px, 4vw, 44px);">What actually changed</h2>
+  <div class="flow-list" style="margin-top:clamp(12px, 1.8vw, 20px);">
+    <div class="flow-item"><div class="flow-num">→</div><div><div class="flow-title" style="font-size:clamp(18px, 2.4vw, 26px);">Built reusable sponsorship &amp; delegate asset systems</div><div class="flow-desc">so each summit stopped starting from zero</div></div></div>
+    <div class="flow-item"><div class="flow-num">→</div><div><div class="flow-title" style="font-size:clamp(18px, 2.4vw, 26px);">Directed strategy across distributed teams</div><div class="flow-desc">APAC, EMEA and Latin America working from one brand system</div></div></div>
+    <div class="flow-item"><div class="flow-num">→</div><div><div class="flow-title" style="font-size:clamp(18px, 2.4vw, 26px);">Owned stakeholder translation</div><div class="flow-desc">turning complex sponsor briefs into clear creative direction</div></div></div>
+  </div>
+  <div class="pagenum">05 / 13</div>
+</div>
+
+<!-- ===== SLIDE 6: CASE STUDY 1 - RESULT ===== -->
+<div class="slide">
+  <div class="accentbar"></div>
+  <div class="eyebrow">// QS APAC Summit — Result</div>
+  <div class="statline">£2M+</div>
+  <div class="statlabel">SPONSORSHIP &amp; DELEGATE REVENUE, 2025</div>
+  <div class="divider"></div>
+  <p class="body" style="font-size:clamp(18px, 2.4vw, 26px);">Scaled from <b>£429K in 2019</b> to £2M+ in 2025 — while event complexity grew, not the other way around.</p>
+  <div class="pagenum">06 / 13</div>
+</div>
+
+<!-- ===== SLIDE 7: CASE STUDY 2 - CONTEXT + APPROACH ===== -->
+<div class="slide">
+  <div class="accentbar"></div>
+  <div style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:18px;"><span class="tag live">CASE STUDY 02</span><span class="tag mono">QS-RBR</span></div>
+  <h2 class="mid" style="font-size:clamp(28px, 5.4vw, 58px);">Global Rebrand</h2>
+  <p class="body" style="font-size:clamp(16px, 2.4vw, 26px);">Rolling a new brand system across every regional touchpoint — digital, print and event — without losing consistency along the way.</p>
+  <div class="divider"></div>
+  <div class="flow-list" style="margin-top:10px;">
+    <div class="flow-item"><div class="flow-num">→</div><div><div class="flow-title" style="font-size:clamp(16px, 2.2vw, 24px);">Played a key role in the strategy and led the <br>creative rollout across all regions.</div></div></div>
+    <div class="flow-item"><div class="flow-num">→</div><div><div class="flow-title" style="font-size:clamp(16px, 2.2vw, 24px);">Built and managed the quality assurance framework to <br>ensure consistency across every region's output.</div></div></div>
+  </div>
+  <div class="pagenum">07 / 13</div>
+</div>
+
+<!-- ===== SLIDE 8: CASE STUDY 2 - RESULT ===== -->
+<div class="slide">
+  <div class="accentbar"></div>
+  <div class="eyebrow">// Global Rebrand — Result</div>
+  <div class="statline">+40%</div>
+  <div class="statlabel">ENGAGEMENT ACROSS DIGITAL CHANNELS</div>
+  <div class="divider"></div>
+  <p class="body" style="font-size:clamp(18px, 2.4vw, 26px);">Alongside <b>29K+ new social followers</b> and <b>20% sales growth</b> tied to the rebrand launch.</p>
+  <div class="pagenum">08 / 13</div>
+</div>
+
+<!-- ===== SLIDE 9: CASE STUDY 3 - CONTEXT + APPROACH ===== -->
+<div class="slide">
+  <div class="accentbar"></div>
+  <div style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:18px;"><span class="tag shipped">CASE STUDY 03</span><span class="tag mono">ZLR-14</span></div>
+  <h2 class="mid" style="font-size:clamp(28px, 5.4vw, 58px);">ZALORA Launch</h2>
+  <p class="body" style="font-size:clamp(16px, 2.4vw, 26px);">Southeast Asia's leading fashion e-commerce platform — I built the creative function from scratch during its high-growth launch phase.</p>
+  <div class="divider"></div>
+  <div class="flow-list" style="margin-top:10px;">
+    <div class="flow-item"><div class="flow-num">→</div><div><div class="flow-title" style="font-size:clamp(16px, 2.2vw, 24px);">Directed brand identity for rapid market expansion</div></div></div>
+    <div class="flow-item"><div class="flow-num">→</div><div><div class="flow-title" style="font-size:clamp(16px, 2.2vw, 24px);">Built reusable templates &amp; asset libraries from day one</div></div></div>
+  </div>
+  <div class="pagenum">09 / 13</div>
+</div>
+
+<!-- ===== SLIDE 10: CASE STUDY 3 - RESULT ===== -->
+<div class="slide">
+  <div class="accentbar"></div>
+  <div class="eyebrow">// ZALORA Launch — Result</div>
+  <div class="statline">+35%</div>
+  <div class="statlabel">PRODUCTION EFFICIENCY</div>
+  <div class="divider"></div>
+  <p class="body" style="font-size:clamp(18px, 2.4vw, 26px);">Faster campaign rollout across web, social, SEO/PPC and on-site — built to scale with the business, not against it.</p>
+  <div class="pagenum">10 / 13</div>
+</div>
+
+<!-- ===== SLIDE 11: CASE STUDY 4 - AI SYSTEM ===== -->
+<div class="slide">
+  <div class="accentbar"></div>
+  <div style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:18px;"><span class="tag scaled">CASE STUDY 04</span><span class="tag mono">QS-AUT</span></div>
+  <h2 class="mid" style="font-size:clamp(28px, 4.8vw, 52px);">AI Production System</h2>
+  <p class="body" style="font-size:clamp(16px, 2.4vw, 26px);">Ethical AI-assisted design automation + atomic design systems, built to take repetitive production work off the team's plate.</p>
+  <div class="divider"></div>
+  <div class="statline" style="font-size:clamp(48px, 8vw, 90px);">−30%</div>
+  <div class="statlabel">PRODUCTION TIMELINES · −25% REPETITIVE TASKS</div>
+  <div class="pagenum">11 / 13</div>
+</div>
+
+<!-- ===== SLIDE 12: HOW THE STUDIO RUNS ===== -->
+<div class="slide">
+  <div class="accentbar"></div>
+  <div class="eyebrow">// How The Studio Runs</div>
+  <h2 class="mid" style="font-size:clamp(24px, 4.2vw, 46px);">Brief → System → Launch → Scale</h2>
+  <div class="flow-list" style="margin-top:clamp(16px, 2.4vw, 30px);">
+    <div class="flow-item"><div class="flow-num">01</div><div><div class="flow-title" style="font-size:clamp(18px, 2.4vw, 26px);">Brief</div><div class="flow-desc">Translate stakeholder briefs into clear direction across regions.</div></div></div>
+    <div class="flow-item"><div class="flow-num">02</div><div><div class="flow-title" style="font-size:clamp(18px, 2.4vw, 26px);">System</div><div class="flow-desc">Build atomic design &amp; AI-assisted templates so production scales without rework.</div></div></div>
+    <div class="flow-item"><div class="flow-num">03</div><div><div class="flow-title" style="font-size:clamp(18px, 2.4vw, 26px);">Launch</div><div class="flow-desc">Coordinate distributed teams through ClickUp/Agile workflows to ship on time.</div></div></div>
+    <div class="flow-item"><div class="flow-num">04</div><div><div class="flow-title" style="font-size:clamp(18px, 2.4vw, 26px);">Scale</div><div class="flow-desc">Measure, refine and cut feedback loops for the next cycle.</div></div></div>
+  </div>
+  <div class="pagenum">12 / 13</div>
+</div>
+
+<!-- ===== SLIDE 13: CTA ===== -->
+<div class="slide">
+  <div class="accentbar"></div>
+  <div class="logo-row"><div class="logo-mark">IB</div><div class="logo-text mono">IZAM-01 · CONTACT</div></div>
+  <h1 class="big" style="font-size:clamp(28px, 6vw, 64px);">Let's talk about running your studio better.</h1>
+  <div class="cover-ticket" style="margin-top:clamp(12px, 1.8vw, 20px);">
+    <div class="field-grid" style="grid-template-columns:1fr;">
+      <div class="field"><div class="label">FULL CASE STUDIES</div><div class="value" style="font-size:clamp(18px, 2.6vw, 28px);"><a href="index.html" style="color:var(--accent);text-decoration:none;">mhmdizam.github.io</a></div></div>
+      <div class="field"><div class="label">EMAIL</div><div class="value" style="font-size:clamp(18px, 2.6vw, 28px);">izam.buhan@gmail.com</div></div>
+      <div class="field"><div class="label">CONNECT</div><div class="value" style="font-size:clamp(18px, 2.6vw, 28px);">linkedin.com/in/mhmdizam</div></div>
+    </div>
+  </div>
+  <div class="arrow-cta">↑ <a href="index.html">FOLLOW FOR MORE ON CREATIVE OPS</a></div>
+  <div class="pagenum">13 / 13</div>
+</div>
+
+</body>
+</html>
