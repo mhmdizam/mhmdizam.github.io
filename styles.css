@@ -131,6 +131,14 @@ h1.name{
 
 /* ---- BOARD SECTION (case study grid) ---- */
 .board-section{ padding: 90px 40px 40px; }
+
+/* ---- FRIENDLY INTRO ---- */
+.intro-section{ padding: 50px 40px 10px; }
+.intro-block{ max-width: 700px; }
+.intro-text{ font-size:16px; line-height:1.75; color:var(--text-dim); margin-bottom:18px; }
+.intro-text:first-of-type{ font-size:18px; color:var(--text); }
+.intro-text b{ color:var(--text); font-weight:600; }
+.intro-text.personal{ color:var(--text-dim); }
 .section-head{ display:flex; justify-content:space-between; align-items:baseline; margin-bottom:28px; flex-wrap:wrap; gap:10px;}
 .section-title{ font-family:'Space Grotesk'; font-size:26px; font-weight:600; }
 .section-sub{ font-family:'JetBrains Mono'; font-size:12px; color:var(--text-dim); }
@@ -277,6 +285,8 @@ footer{
   h1.name { font-size: 30px; }
   .role-line { font-size: 15px; }
   .summary { font-size: 14px; }
+  .intro-text{ font-size: 14px; }
+  .intro-text:first-of-type{ font-size: 16px; }
   .field-grid { grid-template-columns: 1fr; gap: 16px; }
   .field .value { font-size: 20px; }
   .cta-row { flex-direction: column; width: 100%; }
