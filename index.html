@@ -3,15 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Izam Buhan — Creative Operations & Brand Production Manager</title>
-<meta name="description" content="From making the work to running the studio. Case studies in creative operations, brand production and AI-assisted design systems, from 17+ years leading design teams globally.">
-<meta property="og:title" content="Izam Buhan — Creative Operations & Brand Production Manager">
-<meta property="og:description" content="From making the work to running the studio. Case studies in creative operations, brand production and AI-assisted design systems.">
+<title>Visual Work — Izam Buhan</title>
+<meta name="description" content="Selected visual work from current and past projects — QS creative studio, ZALORA and earlier brand and campaign work.">
+<meta property="og:title" content="Visual Work — Izam Buhan">
+<meta property="og:description" content="Selected visual work from current and past projects.">
 <meta property="og:type" content="website">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
 <link rel="icon" href="favicon.ico">
+
+<!-- Lightbox2 CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css">
+
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -22,147 +26,682 @@
       <div class="logo-text">IZAM BUHAN</div>
     </a>
     <div class="nav-links">
-      <a href="#work">Work</a><a href="gallery.html">Visual Work</a><a href="case-ai-system.html">Systems</a><a href="mailto:izam.buhan@gmail.com">Contact</a><a href="Izam_Buhan_Resume_ATS.docx">Resume</a>
+      <a href="index.html#work">Work</a><a href="gallery.html" class="active">Visual Work</a><a href="case-ai-system.html">Systems</a><a href="mailto:izam.buhan@gmail.com">Contact</a><a href="Izam_Buhan_Resume_ATS.docx">Resume</a>
     </div>
     <div class="status-pill"><span class="dot"></span>OPEN TO CREATIVE OPS / PMO ROLES</div>
   </nav>
 
+  <div class="breadcrumb wrap"><a href="index.html">← Back to work</a></div>
+
   <header class="hero wrap">
-    <div class="hero-eyebrow">// PROFILE — IZAM-01</div>
-    <div class="ticket">
-      <div class="ticket-top">
-        <div class="ticket-id mono">IZAM-01 · CREATIVE OPS PROFILE</div>
-        <div class="ticket-tags">
-          <div class="tag open">STATUS: OPEN</div>
-          <div class="tag role">TARGET: PMO / CREATIVE OPS</div>
-        </div>
-      </div>
-
-      <h1 class="name">Muhammad Izam Buhan</h1>
-      <div class="role-line">Creative Operations &amp; Brand Production Manager — Kuala Lumpur</div>
-
-      <div class="summary">
-        17+ years leading design teams, now focused on <b>the systems behind the work</b> —
-        production pipelines, AI-assisted workflows, and distributed teams across
-        <b>APAC, EMEA and Latin America</b>. Currently running the global creative studio at QS.
-      </div>
-
-      <div class="field-grid">
-        <div class="field"><div class="label">YEARS EXPERIENCE</div><div class="value"><span>17</span>+</div></div>
-        <div class="field"><div class="label">SUMMIT REVENUE SCALED</div><div class="value">£429K→<span>2M+</span></div></div>
-        <div class="field"><div class="label">TEAM PERFORMANCE</div><div class="value">+<span>25</span>%</div></div>
-        <div class="field"><div class="label">CORE STAFF RETENTION</div><div class="value"><span>100</span>%</div></div>
-      </div>
-
-      <div class="cta-row">
-        <a href="#work" class="btn primary">View case studies ↓</a>
-        <a href="Izam_Buhan_Resume_ATS.docx" class="btn ghost">Download résumé</a>
-      </div>
+    <div class="hero-eyebrow">// VISUAL WORK</div>
+    <h1 class="name" style="font-size: clamp(28px, 4.5vw, 44px);">Selected visuals, current and archive</h1>
+    <div class="summary" style="margin-top: 10px;">
+      The case studies cover the systems and outcomes — this page is the craft behind them. Split into
+      <b>current work</b> from the QS creative studio, and an <b>archive</b> of earlier agency and in-house projects.
     </div>
   </header>
 
-  <section class="board-section wrap" id="work">
-    <div class="section-head">
-      <div class="section-title">Selected work</div>
-      <div class="section-sub mono">4 CASE STUDIES · SORTED BY IMPACT</div>
+  <!-- ===== GALLERY GRID WITH FILTERS AND LOAD MORE ===== -->
+  <section class="gallery-section wrap">
+    <div class="filter-section">
+      <div class="filter-buttons">
+        <button class="filter-btn active" data-filter="all">All Work</button>
+        <button class="filter-btn" data-filter="current">Current</button>
+        <button class="filter-btn" data-filter="archive">Archive</button>
+      </div>
     </div>
-    <div class="board">
 
-      <a class="card-link" href="case-qs-summit.html">
-        <div class="card">
-          <div class="card-top">
-            <div class="card-tag scaled">SCALED</div>
-            <div class="card-id">QS-2025</div>
+    <div class="gallery-grid" id="galleryGrid">
+
+      <!-- ===== CURRENT WORK ===== -->
+      <!-- Item 1: QS Summit Main -->
+      <div class="gallery-item" data-category="current">
+        <a href="images/qs-summit-main.jpg" 
+           data-lightbox="gallery" 
+           data-title="QS APAC Summit — Main Stage Brand Experience"
+           data-year="2025"
+           data-role="Creative Direction"
+           data-tags="Event Design, Brand Identity, Environmental Design"
+           data-description="Complete brand system for QS's flagship APAC Summit — from main stage visual identity to delegate journey mapping. The system was designed to scale across 13+ annual summits while maintaining brand consistency."
+           data-results="£2M+ revenue, 4.6x growth since 2019">
+          <div class="gallery-thumb">
+            <img src="images/qs-summit-main-thumb.jpg" alt="QS APAC Summit main stage branding">
           </div>
-          <div class="card-title">QS APAC Summit</div>
-          <div class="card-desc">Creative strategy &amp; production for the flagship annual summit — sponsorship, delegate experience and on-site brand systems.</div>
-          <div class="card-stat">
-            <div class="num">£2M+</div>
-            <div class="desc">revenue, up from £429K in 2019</div>
+        </a>
+        <div class="gallery-caption">
+          <div class="g-title">QS APAC Summit — Main stage brand experience</div>
+          <div class="g-meta mono">2025 · CREATIVE DIRECTION</div>
+          <div class="g-tags">
+            <span>Event Design</span>
+            <span>Brand Identity</span>
           </div>
-          <div class="card-cta">View case study →</div>
         </div>
-      </a>
+      </div>
 
-      <a class="card-link" href="case-global-rebrand.html">
-        <div class="card">
-          <div class="card-top">
-            <div class="card-tag live">LIVE</div>
-            <div class="card-id">QS-RBR</div>
+      <!-- Item 2: QS Summit Collateral -->
+      <div class="gallery-item" data-category="current">
+        <a href="images/qs-summit-collateral.jpg" 
+           data-lightbox="gallery" 
+           data-title="QS APAC Summit — Delegate Collateral & Merch"
+           data-year="2025"
+           data-role="Creative Direction"
+           data-tags="Print Design, Merchandise, Event Design"
+           data-description="Full suite of delegate materials including badges, programs, bags, and merch. Designed to create a cohesive brand experience from registration to departure."
+           data-results="95% delegate satisfaction rating">
+          <div class="gallery-thumb">
+            <img src="images/qs-summit-collateral-thumb.jpg" alt="QS Summit delegate collateral">
           </div>
-          <div class="card-title">Global Rebrand</div>
-          <div class="card-desc">End-to-end brand system rollout across every regional touchpoint and digital channel.</div>
-          <div class="card-stat">
-            <div class="num">+40%</div>
-            <div class="desc">engagement across digital</div>
+        </a>
+        <div class="gallery-caption">
+          <div class="g-title">QS APAC Summit — Delegate collateral &amp; merch</div>
+          <div class="g-meta mono">2025 · CREATIVE DIRECTION</div>
+          <div class="g-tags">
+            <span>Print Design</span>
+            <span>Merchandise</span>
           </div>
-          <div class="card-cta">View case study →</div>
         </div>
-      </a>
+      </div>
 
-      <a class="card-link" href="case-zalora-launch.html">
-        <div class="card">
-          <div class="card-top">
-            <div class="card-tag shipped">SHIPPED</div>
-            <div class="card-id">ZLR-14</div>
+      <!-- Item 3: Global Rebrand Digital -->
+      <div class="gallery-item" data-category="current">
+        <a href="images/rebrand-digital.jpg" 
+           data-lightbox="gallery" 
+           data-title="Global Rebrand — Digital Rollout"
+           data-year="2024"
+           data-role="Brand Strategy"
+           data-tags="Web Design, UI/UX, Digital Strategy"
+           data-description="End-to-end digital rollout of the new QS brand identity across website, app, and digital touchpoints. Focused on consistency, accessibility, and user experience."
+           data-results="+40% engagement, 20% sales growth">
+          <div class="gallery-thumb">
+            <img src="images/rebrand-digital-thumb.jpg" alt="Global rebrand digital rollout">
           </div>
-          <div class="card-title">ZALORA Launch</div>
-          <div class="card-desc">Built the creative function from zero during ZALORA's high-growth SEA launch phase.</div>
-          <div class="card-stat">
-            <div class="num">+35%</div>
-            <div class="desc">production efficiency</div>
+        </a>
+        <div class="gallery-caption">
+          <div class="g-title">Global Rebrand — Digital rollout</div>
+          <div class="g-meta mono">2024 · BRAND STRATEGY</div>
+          <div class="g-tags">
+            <span>Web Design</span>
+            <span>UI/UX</span>
           </div>
-          <div class="card-cta">View case study →</div>
         </div>
-      </a>
+      </div>
 
-      <a class="card-link" href="case-ai-system.html">
-        <div class="card">
-          <div class="card-top">
-            <div class="card-tag shipped">SHIPPED</div>
-            <div class="card-id">QS-AUT</div>
+      <!-- Item 4: Global Rebrand Social -->
+      <div class="gallery-item" data-category="current">
+        <a href="images/rebrand-social.jpg" 
+           data-lightbox="gallery" 
+           data-title="Global Rebrand — Social Campaign"
+           data-year="2024"
+           data-role="Creative Direction"
+           data-tags="Social Media, Campaign Strategy"
+           data-description="Social media campaign launching the new brand identity across all platforms. 29K+ new followers in the launch window."
+           data-results="29K+ new followers, +40% engagement">
+          <div class="gallery-thumb">
+            <img src="images/rebrand-social-thumb.jpg" alt="Global rebrand social assets">
           </div>
-          <div class="card-title">AI Production System</div>
-          <div class="card-desc">Template automation &amp; atomic design system reducing repetitive production work studio-wide.</div>
-          <div class="card-stat">
-            <div class="num">−30%</div>
-            <div class="desc">production timelines</div>
+        </a>
+        <div class="gallery-caption">
+          <div class="g-title">Global Rebrand — Social campaign assets</div>
+          <div class="g-meta mono">2024 · CREATIVE DIRECTION</div>
+          <div class="g-tags">
+            <span>Social Media</span>
+            <span>Campaign</span>
           </div>
-          <div class="card-cta">View case study →</div>
         </div>
-      </a>
+      </div>
 
+      <!-- Item 5: AI System Templates -->
+      <div class="gallery-item" data-category="current">
+        <a href="images/ai-system-templates.jpg" 
+           data-lightbox="gallery" 
+           data-title="AI Production System — Template Automation"
+           data-year="2023-2024"
+           data-role="Systems Design"
+           data-tags="Automation, Design Systems, AI"
+           data-description="Ethical AI-assisted template system that reduced repetitive production work by 25% and cut production timelines by 30% studio-wide."
+           data-results="-30% production timelines, -25% repetitive tasks">
+          <div class="gallery-thumb">
+            <img src="images/ai-system-templates-thumb.jpg" alt="AI template system">
+          </div>
+        </a>
+        <div class="gallery-caption">
+          <div class="g-title">AI Production System — Template system</div>
+          <div class="g-meta mono">2023-2024 · SYSTEMS DESIGN</div>
+          <div class="g-tags">
+            <span>Automation</span>
+            <span>Design Systems</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 6: QS Summit Sponsorship -->
+      <div class="gallery-item" data-category="current">
+        <a href="images/qs-summit-sponsorship.jpg" 
+           data-lightbox="gallery" 
+           data-title="QS APAC Summit — Sponsorship Deck & Exhibition"
+           data-year="2025"
+           data-role="Creative Direction"
+           data-tags="Presentation Design, Exhibition Design"
+           data-description="Sponsorship deck and exhibition design that helped scale summit revenue from £429K to £2M+."
+           data-results="£2M+ revenue, 4.6x growth">
+          <div class="gallery-thumb">
+            <img src="images/qs-summit-sponsorship-thumb.jpg" alt="QS Summit sponsorship deck">
+          </div>
+        </a>
+        <div class="gallery-caption">
+          <div class="g-title">QS APAC Summit — Sponsorship deck &amp; exhibition</div>
+          <div class="g-meta mono">2025 · CREATIVE DIRECTION</div>
+          <div class="g-tags">
+            <span>Presentation Design</span>
+            <span>Exhibition</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 7: QS Summit Signage -->
+      <div class="gallery-item" data-category="current">
+        <a href="images/qs-summit-signage.jpg" 
+           data-lightbox="gallery" 
+           data-title="QS APAC Summit — Event Signage & Wayfinding"
+           data-year="2025"
+           data-role="Creative Direction"
+           data-tags="Wayfinding, Environmental Design"
+           data-description="Comprehensive signage and wayfinding system for the summit, guiding 2,000+ attendees across multiple venues."
+           data-results="Successfully managed 2,000+ attendees">
+          <div class="gallery-thumb">
+            <img src="images/qs-summit-signage-thumb.jpg" alt="QS Summit signage">
+          </div>
+        </a>
+        <div class="gallery-caption">
+          <div class="g-title">QS APAC Summit — Event signage system</div>
+          <div class="g-meta mono">2025 · CREATIVE DIRECTION</div>
+          <div class="g-tags">
+            <span>Wayfinding</span>
+            <span>Environmental Design</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 8: QS Print Reports -->
+      <div class="gallery-item" data-category="current">
+        <a href="images/rebrand-print.jpg" 
+           data-lightbox="gallery" 
+           data-title="Global Rebrand — Print Collateral & Reports"
+           data-year="2024"
+           data-role="Brand Strategy"
+           data-tags="Print Design, Editorial Design"
+           data-description="Print collateral including annual reports, brochures, and business stationery. Designed to maintain brand consistency across all physical touchpoints."
+           data-results="Consistent brand experience across 3 continents">
+          <div class="gallery-thumb">
+            <img src="images/rebrand-print-thumb.jpg" alt="Rebrand print materials">
+          </div>
+        </a>
+        <div class="gallery-caption">
+          <div class="g-title">Global Rebrand — Print collateral &amp; reports</div>
+          <div class="g-meta mono">2024 · BRAND STRATEGY</div>
+          <div class="g-tags">
+            <span>Print Design</span>
+            <span>Editorial</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== ARCHIVE WORK ===== -->
+      <!-- Item 9: ZALORA Website -->
+      <div class="gallery-item" data-category="archive">
+        <a href="images/zalora-website.jpg" 
+           data-lightbox="gallery" 
+           data-title="ZALORA — E-commerce Website Design"
+           data-year="2013"
+           data-role="Head of Creative"
+           data-tags="Web Design, E-commerce, UI/UX"
+           data-description="Built the e-commerce website from the ground up for Southeast Asia's leading fashion platform. Designed for rapid market expansion across multiple countries."
+           data-results="Southeast Asia's leading fashion platform">
+          <div class="gallery-thumb">
+            <img src="images/zalora-website-thumb.jpg" alt="ZALORA website design">
+          </div>
+        </a>
+        <div class="gallery-caption">
+          <div class="g-title">ZALORA — E-commerce website design</div>
+          <div class="g-meta mono">2013 · HEAD OF CREATIVE</div>
+          <div class="g-tags">
+            <span>Web Design</span>
+            <span>E-commerce</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 10: ZALORA Campaign -->
+      <div class="gallery-item" data-category="archive">
+        <a href="images/zalora-campaign.jpg" 
+           data-lightbox="gallery" 
+           data-title="ZALORA — Fashion Campaign Visuals"
+           data-year="2013"
+           data-role="Head of Creative"
+           data-tags="Campaign, Photography, Fashion"
+           data-description="High-fashion campaign visuals for Southeast Asia's leading e-commerce platform. Directed photoshoots and created campaign assets across all channels."
+           data-results="35% production efficiency increase">
+          <div class="gallery-thumb">
+            <img src="images/zalora-campaign-thumb.jpg" alt="ZALORA campaign">
+          </div>
+        </a>
+        <div class="gallery-caption">
+          <div class="g-title">ZALORA — Fashion campaign visuals</div>
+          <div class="g-meta mono">2013 · HEAD OF CREATIVE</div>
+          <div class="g-tags">
+            <span>Campaign</span>
+            <span>Photography</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 11: ZALORA App -->
+      <div class="gallery-item" data-category="archive">
+        <a href="images/zalora-app.jpg" 
+           data-lightbox="gallery" 
+           data-title="ZALORA — Mobile App Experience"
+           data-year="2014"
+           data-role="Head of Creative"
+           data-tags="UI/UX, Mobile Design"
+           data-description="Mobile app UI/UX design for iOS and Android. Focused on seamless shopping experience and brand consistency across platforms."
+           data-results="App store rating: 4.5+ stars">
+          <div class="gallery-thumb">
+            <img src="images/zalora-app-thumb.jpg" alt="ZALORA app design">
+          </div>
+        </a>
+        <div class="gallery-caption">
+          <div class="g-title">ZALORA — Mobile app experience</div>
+          <div class="g-meta mono">2014 · HEAD OF CREATIVE</div>
+          <div class="g-tags">
+            <span>UI/UX</span>
+            <span>Mobile</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 12: Alhaya Identity -->
+      <div class="gallery-item" data-category="archive">
+        <a href="images/alhaya-identity.jpg" 
+           data-lightbox="gallery" 
+           data-title="Alhaya Brandworks — Corporate Identity"
+           data-year="2010"
+           data-role="Brand Consultant"
+           data-tags="Logo Design, Brand Guidelines"
+           data-description="Complete corporate identity system including logo, brand guidelines, and visual identity for Alhaya Brandworks."
+           data-results="Successful brand launch and market positioning">
+          <div class="gallery-thumb">
+            <img src="images/alhaya-identity-thumb.jpg" alt="Alhaya identity">
+          </div>
+        </a>
+        <div class="gallery-caption">
+          <div class="g-title">Alhaya Brandworks — Corporate identity</div>
+          <div class="g-meta mono">2010 · BRAND CONSULTANT</div>
+          <div class="g-tags">
+            <span>Logo Design</span>
+            <span>Brand Guidelines</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 13: Alhaya Packaging -->
+      <div class="gallery-item" data-category="archive">
+        <a href="images/alhaya-packaging.jpg" 
+           data-lightbox="gallery" 
+           data-title="Alhaya Brandworks — Product Packaging & NPD"
+           data-year="2011"
+           data-role="Brand Consultant"
+           data-tags="Packaging Design, Product Design"
+           data-description="Product packaging and new product development visuals for Alhaya's brand portfolio."
+           data-results="Successful NPD launch">
+          <div class="gallery-thumb">
+            <img src="images/alhaya-packaging-thumb.jpg" alt="Alhaya packaging">
+          </div>
+        </a>
+        <div class="gallery-caption">
+          <div class="g-title">Alhaya Brandworks — Packaging &amp; NPD visuals</div>
+          <div class="g-meta mono">2011 · BRAND CONSULTANT</div>
+          <div class="g-tags">
+            <span>Packaging</span>
+            <span>Product Design</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 14: Early Advertising -->
+      <div class="gallery-item" data-category="archive">
+        <a href="images/early-advertising.jpg" 
+           data-lightbox="gallery" 
+           data-title="Early Career — Advertising Campaign"
+           data-year="2008"
+           data-role="Junior Designer"
+           data-tags="Advertising, Print Design"
+           data-description="Early career advertising campaign work. Foundation in print advertising and visual communication."
+           data-results="First industry recognition">
+          <div class="gallery-thumb">
+            <img src="images/early-advertising-thumb.jpg" alt="Early advertising work">
+          </div>
+        </a>
+        <div class="gallery-caption">
+          <div class="g-title">Early career — Advertising campaign</div>
+          <div class="g-meta mono">2008 · JUNIOR DESIGNER</div>
+          <div class="g-tags">
+            <span>Advertising</span>
+            <span>Print</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 15: Early Multimedia -->
+      <div class="gallery-item" data-category="archive">
+        <a href="images/early-multimedia.jpg" 
+           data-lightbox="gallery" 
+           data-title="Early Career — Print & Multimedia Work"
+           data-year="2009"
+           data-role="Multimedia Designer"
+           data-tags="Multimedia, Print Design"
+           data-description="Early multimedia design work including print, digital, and interactive projects."
+           data-results="Foundation in multimedia design">
+          <div class="gallery-thumb">
+            <img src="images/early-multimedia-thumb.jpg" alt="Early multimedia work">
+          </div>
+        </a>
+        <div class="gallery-caption">
+          <div class="g-title">Early career — Print &amp; multimedia work</div>
+          <div class="g-meta mono">2009 · MULTIMEDIA DESIGNER</div>
+          <div class="g-tags">
+            <span>Multimedia</span>
+            <span>Print Design</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 16: ZALORA Brand System -->
+      <div class="gallery-item" data-category="archive">
+        <a href="images/zalora-brand.jpg" 
+           data-lightbox="gallery" 
+           data-title="ZALORA — Brand Identity System"
+           data-year="2012"
+           data-role="Head of Creative"
+           data-tags="Brand Identity, Style Guide"
+           data-description="Comprehensive brand identity system including style guide, brand guidelines, and visual assets for ZALORA."
+           data-results="Consistent brand across 8+ markets">
+          <div class="gallery-thumb">
+            <img src="images/zalora-brand-thumb.jpg" alt="ZALORA brand system">
+          </div>
+        </a>
+        <div class="gallery-caption">
+          <div class="g-title">ZALORA — Brand identity system</div>
+          <div class="g-meta mono">2012 · HEAD OF CREATIVE</div>
+          <div class="g-tags">
+            <span>Brand Identity</span>
+            <span>Style Guide</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="load-more-container">
+      <button class="load-more-btn" id="loadMoreBtn">
+        <span class="btn-text">Load More Work</span>
+        <span class="btn-count">(4 remaining)</span>
+      </button>
     </div>
   </section>
 
-  <section class="flow-section wrap" id="systems">
-    <div class="section-head">
-      <div class="section-title">How the studio runs</div>
-      <div class="section-sub mono">BRIEF → SYSTEM → LAUNCH → SCALE</div>
+<!-- ===== VIDEO SECTION WITH YOUTUBE (Organized by Year) ===== -->
+<section class="video-section wrap">
+  <div class="section-head">
+    <div class="section-title">Motion &amp; Video Work</div>
+    <div class="section-sub mono">SELECTED REEL &amp; PROJECTS</div>
+  </div>
+
+  <div class="video-grid">
+    <!-- ===== 2021 ===== -->
+    <!-- Video 1: 2021 QS LSBU Partnership -->
+    <div class="video-item featured">
+      <div class="video-wrapper">
+        <div class="youtube-container">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/rDwFTD2jqHw?rel=0&modestbranding=1&controls=1"
+            title="QS LSBU Partnership"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+      <div class="video-caption">
+        <div class="g-title">QS LSBU Partnership</div>
+        <div class="g-meta mono">2021 · VIDEO PRODUCTION</div>
+        <div class="g-tags">
+          <span>Partnership</span>
+          <span>Corporate Video</span>
+        </div>
+      </div>
     </div>
-    <div class="flow-strip">
-      <div class="flow-step">
-        <div class="flow-num">01</div>
-        <div class="flow-title">Brief</div>
-        <div class="flow-desc">Translate stakeholder briefs into clear creative direction across regions.</div>
+
+    <!-- Video 2: 2021 LSBU QS Partnership -->
+    <div class="video-item">
+      <div class="video-wrapper">
+        <div class="youtube-container">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/W_blYf72nao?rel=0&modestbranding=1&controls=1"
+            title="LSBU QS Partnership"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div>
       </div>
-      <div class="flow-step">
-        <div class="flow-num">02</div>
-        <div class="flow-title">System</div>
-        <div class="flow-desc">Build atomic design &amp; AI-assisted templates so production scales without rework.</div>
-      </div>
-      <div class="flow-step">
-        <div class="flow-num">03</div>
-        <div class="flow-title">Launch</div>
-        <div class="flow-desc">Coordinate distributed teams through ClickUp/Agile workflows to ship on time.</div>
-      </div>
-      <div class="flow-step">
-        <div class="flow-num">04</div>
-        <div class="flow-title">Scale</div>
-        <div class="flow-desc">Measure, refine, and reduce feedback loops for the next cycle.</div>
+      <div class="video-caption">
+        <div class="g-title">LSBU QS Partnership</div>
+        <div class="g-meta mono">2021 · VIDEO PRODUCTION</div>
+        <div class="g-tags">
+          <span>Partnership</span>
+          <span>Corporate Video</span>
+        </div>
       </div>
     </div>
-  </section>
+
+    <!-- ===== 2020 ===== -->
+    <!-- Video 3: 2020 QS x Twilio -->
+    <div class="video-item">
+      <div class="video-wrapper">
+        <div class="youtube-container">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/rnYj_goApQU?rel=0&modestbranding=1&controls=1"
+            title="QS x Twilio"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+      <div class="video-caption">
+        <div class="g-title">QS x Twilio — Introduction Teaser</div>
+        <div class="g-meta mono">2020 · VIDEO PRODUCTION</div>
+        <div class="g-tags">
+          <span>Teaser</span>
+          <span>Partnership</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== 2019 ===== -->
+    <!-- Video 4: 2019 QS Reception KL -->
+    <div class="video-item">
+      <div class="video-wrapper">
+        <div class="youtube-container">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/eluoRUea_2E?rel=0&modestbranding=1&controls=1"
+            title="QS Reception Kuala Lumpur"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+      <div class="video-caption">
+        <div class="g-title">QS Reception, Kuala Lumpur</div>
+        <div class="g-meta mono">2019 · EVENT VIDEO</div>
+        <div class="g-tags">
+          <span>Event</span>
+          <span>Reception</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== 2018 (Hidden initially) ===== -->
+    <!-- Video 5: 2018 People Engagement -->
+    <div class="video-item hidden">
+      <div class="video-wrapper">
+        <div class="youtube-container">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/-OugTY2EMO4?rel=0&modestbranding=1&controls=1"
+            title="People Engagement and promotion video"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+      <div class="video-caption">
+        <div class="g-title">People Engagement &amp; Promotion</div>
+        <div class="g-meta mono">2018 · PROMO VIDEO</div>
+        <div class="g-tags">
+          <span>Engagement</span>
+          <span>Promotion</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Video 6: 2018 QSES Video Presentation -->
+    <div class="video-item hidden">
+      <div class="video-wrapper">
+        <div class="youtube-container">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/eDtkzZeU5Og?rel=0&modestbranding=1&controls=1"
+            title="QSES Video Presentation"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+      <div class="video-caption">
+        <div class="g-title">QSES Video Presentation</div>
+        <div class="g-meta mono">2018 · PRESENTATION</div>
+        <div class="g-tags">
+          <span>Presentation</span>
+          <span>Corporate</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Video 7: 2018 AU Video Draft -->
+    <div class="video-item hidden">
+      <div class="video-wrapper">
+        <div class="youtube-container">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/lHYfaclWhPU?rel=0&modestbranding=1&controls=1"
+            title="AU Video Draft"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+      <div class="video-caption">
+        <div class="g-title">AU Video Draft IB v1</div>
+        <div class="g-meta mono">2018 · DRAFT</div>
+        <div class="g-tags">
+          <span>Draft</span>
+          <span>Concept</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== 2016 (Hidden initially) ===== -->
+    <!-- Video 8: 2016 TOEFL International (Private) -->
+    <div class="video-item hidden">
+      <div class="video-wrapper">
+        <div class="youtube-container">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/YHGeTYBhrns?rel=0&modestbranding=1&controls=1"
+            title="TOEFL International"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+      <div class="video-caption">
+        <div class="g-title">TOEFL International</div>
+        <div class="g-meta mono">2016 · VIDEO PRODUCTION</div>
+        <div class="g-tags">
+          <span>TOEFL</span>
+          <span>International</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Video 9: 2016 Hobsons Interview (Private) -->
+    <div class="video-item hidden">
+      <div class="video-wrapper">
+        <div class="youtube-container">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/80jrQeO6trs?rel=0&modestbranding=1&controls=1"
+            title="Hobsons Interview"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+      <div class="video-caption">
+        <div class="g-title">Hobsons — Interview Video</div>
+        <div class="g-meta mono">2016 · INTERVIEW</div>
+        <div class="g-tags">
+          <span>Interview</span>
+          <span>Hobsons</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Video 10: 2016 Curtin Partnership (Private) -->
+    <div class="video-item hidden">
+      <div class="video-wrapper">
+        <div class="youtube-container">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/2EPJcdjUSAo?rel=0&modestbranding=1&controls=1"
+            title="Curtin Partnership"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+      <div class="video-caption">
+        <div class="g-title">Curtin Partnership</div>
+        <div class="g-meta mono">2016 · PARTNERSHIP VIDEO</div>
+        <div class="g-tags">
+          <span>Curtin</span>
+          <span>Partnership</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Load More for Videos -->
+  <div class="load-more-container">
+    <button class="load-more-btn" id="loadMoreVideosBtn">
+      <span class="btn-text">Load More Videos</span>
+      <span class="btn-count">(6 remaining)</span>
+    </button>
+  </div>
+</section>
 
   <footer class="wrap">
     <div class="footer-left">Let's talk — <span style="color:var(--accent)">izam.buhan@gmail.com</span></div>
@@ -172,6 +711,170 @@
       <a href="Izam_Buhan_Resume_ATS.docx">Resume</a>
     </div>
   </footer>
+
+  <!-- Lightbox2 JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+  
+  <!-- All JavaScript -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // ---- LOAD MORE FOR IMAGES ----
+      const grid = document.getElementById('galleryGrid');
+      const items = grid.querySelectorAll('.gallery-item');
+      const loadMoreBtn = document.getElementById('loadMoreBtn');
+      
+      let visibleCount = 12;
+      const totalItems = items.length;
+      let currentFilter = 'all';
+
+      function updateVisibleItems(filter = 'all') {
+        const visibleItems = [];
+        items.forEach(item => {
+          const matchesFilter = filter === 'all' || item.dataset.category === filter;
+          if (matchesFilter) {
+            visibleItems.push(item);
+          }
+        });
+
+        items.forEach(item => {
+          const matchesFilter = filter === 'all' || item.dataset.category === filter;
+          if (matchesFilter) {
+            item.style.display = 'none';
+          } else {
+            item.style.display = 'none';
+          }
+        });
+
+        const itemsToShow = visibleItems.slice(0, visibleCount);
+        itemsToShow.forEach(item => {
+          item.style.display = 'block';
+        });
+
+        const remaining = visibleItems.length - visibleCount;
+        const btnText = loadMoreBtn.querySelector('.btn-text');
+        const btnCount = loadMoreBtn.querySelector('.btn-count');
+        
+        if (remaining > 0) {
+          loadMoreBtn.style.display = 'flex';
+          btnCount.textContent = `(${remaining} remaining)`;
+        } else {
+          loadMoreBtn.style.display = 'none';
+        }
+
+        return visibleItems.length;
+      }
+
+      loadMoreBtn.addEventListener('click', function() {
+        visibleCount += 8;
+        const total = updateVisibleItems(currentFilter);
+        if (visibleCount >= total) {
+          this.style.display = 'none';
+        }
+      });
+
+      const filterButtons = document.querySelectorAll('.filter-btn');
+      filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          filterButtons.forEach(btn => btn.classList.remove('active'));
+          this.classList.add('active');
+          currentFilter = this.dataset.filter;
+          visibleCount = 12;
+          updateVisibleItems(currentFilter);
+        });
+      });
+
+      updateVisibleItems('all');
+
+      // ---- LOAD MORE FOR VIDEOS ----
+      const loadMoreVideosBtn = document.getElementById('loadMoreVideosBtn');
+      if (loadMoreVideosBtn) {
+        const hiddenVideos = document.querySelectorAll('.video-item.hidden');
+        
+        if (hiddenVideos.length === 0) {
+          loadMoreVideosBtn.style.display = 'none';
+        }
+
+        loadMoreVideosBtn.addEventListener('click', function() {
+          const toShow = Math.min(hiddenVideos.length, 2);
+          for (let i = 0; i < toShow && i < hiddenVideos.length; i++) {
+            hiddenVideos[i].classList.remove('hidden');
+            hiddenVideos[i].style.display = 'flex';
+          }
+          
+          const remaining = hiddenVideos.length - toShow;
+          const btnText = this.querySelector('.btn-text');
+          const btnCount = this.querySelector('.btn-count');
+          
+          if (remaining > 0) {
+            btnCount.textContent = `(${remaining} remaining)`;
+          } else {
+            this.style.display = 'none';
+          }
+        });
+      }
+
+      // ---- CUSTOM LIGHTBOX WITH PROJECT DETAILS ----
+      // Override Lightbox2's display to add project details
+      const originalStart = lightbox.start;
+      
+      lightbox.start = function(imageLink, index) {
+        originalStart.call(this, imageLink, index);
+        
+        const link = imageLink;
+        const title = link.dataset.title || '';
+        const year = link.dataset.year || '';
+        const role = link.dataset.role || '';
+        const tags = link.dataset.tags ? link.dataset.tags.split(', ') : [];
+        const description = link.dataset.description || '';
+        const results = link.dataset.results || '';
+        
+        setTimeout(() => {
+          const container = document.getElementById('lightbox');
+          if (!container) return;
+          
+          const existingCustom = container.querySelector('.lightbox-custom-details');
+          if (existingCustom) existingCustom.remove();
+          
+          const details = document.createElement('div');
+          details.className = 'lightbox-custom-details';
+          
+          let tagsHTML = tags.map(tag => `<span class="lb-tag">${tag}</span>`).join('');
+          
+          details.innerHTML = `
+            <div class="lb-details-grid">
+              <div class="lb-detail-item">
+                <div class="lb-detail-label">Role</div>
+                <div class="lb-detail-value">${role}</div>
+              </div>
+              <div class="lb-detail-item">
+                <div class="lb-detail-label">Year</div>
+                <div class="lb-detail-value">${year}</div>
+              </div>
+              ${results ? `
+              <div class="lb-detail-item lb-detail-full">
+                <div class="lb-detail-label">Results</div>
+                <div class="lb-detail-value highlight">${results}</div>
+              </div>
+              ` : ''}
+            </div>
+            ${description ? `
+            <div class="lb-description">
+              ${description}
+            </div>
+            ` : ''}
+            <div class="lb-tags-container">
+              ${tagsHTML}
+            </div>
+          `;
+          
+          const imageContainer = container.querySelector('.lb-image');
+          if (imageContainer) {
+            imageContainer.parentNode.insertBefore(details, imageContainer.nextSibling);
+          }
+        }, 100);
+      };
+    });
+  </script>
 
 </body>
 </html>
