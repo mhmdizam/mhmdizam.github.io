@@ -139,6 +139,11 @@ h1.name{
 .intro-text:first-of-type{ font-size:18px; color:var(--text); }
 .intro-text b{ color:var(--text); font-weight:600; }
 .intro-text.personal{ color:var(--text-dim); }
+
+/* Lead/closing paragraphs added inside the flow-section (outside .intro-block) */
+.flow-section > .intro-text{ max-width:700px; }
+.flow-section > .intro-text:first-of-type{ margin: -8px 0 32px; }
+.flow-section > .intro-text:last-of-type{ margin: 32px 0 0; }
 .section-head{ display:flex; justify-content:space-between; align-items:baseline; margin-bottom:28px; flex-wrap:wrap; gap:10px;}
 .section-title{ font-family:'Space Grotesk'; font-size:26px; font-weight:600; }
 .section-sub{ font-family:'JetBrains Mono'; font-size:12px; color:var(--text-dim); }
