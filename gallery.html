@@ -61,22 +61,18 @@
       <div class="gallery-item" data-category="current">
         <a href="images/qs-summit-main.jpg" 
            data-lightbox="qs-summit" 
-           data-title="QS APAC Summit"
+           data-title="QS APAC Summit — Main Stage Brand Experience"
            data-year="2025"
            data-role="Creative Direction"
            data-tags="Event Design, Brand Identity, Environmental Design"
            data-description="Complete brand system for QS's flagship APAC Summit — from main stage visual identity to delegate journey mapping. The system was designed to scale across 13+ annual summits while maintaining brand consistency."
            data-results="£2M+ revenue, 4.6x growth since 2019">
           <div class="gallery-thumb">
-            <img src="images/qs-summit-main.jpg" alt="QS APAC Summit main stage branding">
+            <img src="images/qs-summit-main-thumb.jpg" alt="QS APAC Summit main stage branding">
           </div>
         </a>
         <div class="gallery-caption">
-           <!-- extra images, same group, no visible tile -->
-            <a href="images/qs-summit-2.jpg" data-lightbox="qs-summit" data-title="QS APAC Summit — Main Stage Brand Experience" style="display:none;"></a>
-            <a href="images/qs-summit-3.jpg" data-lightbox="qs-summit" data-title="QS APAC Summit — Delegate View" style="display:none;"></a>
-            <a href="images/qs-summit-4.jpg" data-lightbox="qs-summit" data-title="QS APAC Summit — Stage Detail" style="display:none;"></a>
-          <div class="g-title">QS APAC Summit</div>
+          <div class="g-title">QS APAC Summit — Main stage brand experience</div>
           <div class="g-meta mono">2025 · CREATIVE DIRECTION</div>
           <div class="g-tags">
             <span>Event Design</span>
@@ -666,7 +662,7 @@
     </div>
   </footer>
 
-  <!-- Lightbox2 JS -->
+  <!-- Lightbox2 JS (bundled with jQuery) -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox-plus-jquery.min.js"></script>
   
   <!-- All JavaScript -->
@@ -788,7 +784,7 @@
       lightbox.start = function(imageLink, index) {
         originalStart.call(this, imageLink, index);
         
-        const link = imageLink;
+        const link = imageLink[0] || imageLink;
         const title = link.dataset.title || '';
         const year = link.dataset.year || '';
         const role = link.dataset.role || '';
